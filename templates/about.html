@@ -1,0 +1,82 @@
+{% extends "headers.html" %}
+{% block content %}
+
+<main class="bg-light bg-gradient" style="margin-top: 0;">
+  <h2 class="display-1 text-center" style="margin-top: 145px;"> About Us</h2>
+
+  <div class="card border-primary" style="border-left-width: thick">
+    <div class="card-body">
+      <img src="{{url_for('static',filename='logo.png')}}" class="img-fluid" alt="About Us" style="border-radius: 10px; float: right; width: 30%; height: 30%;"/>
+
+      <p class="card-text">
+        Welcome to Travel Buddy, where our motto is Smile, Laugh, and Travel. We believe that travel is more than just reaching a destination; it’s about embracing the journey, creating unforgettable memories, and exploring the world with a smile. Travel Buddy is here to help you make every step of that journey exciting and effortless.
+      </p>
+      <p class="card-text">
+        Our mission is simple: to make travel accessible, affordable, and enjoyable for everyone. We’re here to support solo travelers, families, and groups in creating custom itineraries that capture each traveler’s unique tastes and interests. Whether you're discovering new cities or revisiting beloved destinations, our platform is built to make the planning process as joyful as the trip itself.
+      </p>
+      <p class="card-text">
+        Travel Buddy combines smart technology with a user-friendly experience, giving you personalized travel recommendations, budget tips, and real-time updates. With everything in one place, planning your ideal vacation becomes straightforward and stress-free. Our goal is to simplify the logistics, so you can focus on what really matters: enjoying every moment of your adventure.
+      </p>
+      <p class="card-text">
+        At Travel Buddy, we are passionate travelers too. Our team is dedicated to making your trips as fulfilling and exciting as possible. We’re always exploring new ways to bring you tools and insights that add value to your journeys. With our platform by your side, you’re set for unforgettable experiences and countless memories.
+      </p>
+      <p class="card-text">
+        So go ahead, let Travel Buddy be part of your next big adventure. Join us on this journey of discovery, laughter, and exploration, and let’s make every trip a story worth sharing.
+      </p>
+    </div>
+  </div>
+</main>
+
+<div class="floating-container">
+  <div class="floating-button">
+      <i class="fa-solid fa-share-from-square"></i>
+  </div>
+
+  <div class="element-container">
+      <a class="float-element" href="https://www.facebook.com/profile.php?id=61556915904075" target="_blank"> 
+          <span>
+          <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      </span>
+      <a class="float-element" href="https://wa.me/9182972398" target="_blank">
+      <span>
+          <i class="fa-brands fa-whatsapp"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="https://x.com/SirangiSushank" target="_blank">
+      <span>
+          <i class="fa-brands fa-x-twitter"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="https://www.linkedin.com/in/sree-sai-chandana-kunta" target="_blank">
+      <span >
+          <i class="fa-brands fa-linkedin"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="http://t.me/Chad131095" target="_blank">
+      <span >
+          <i class="fa-brands fa-telegram"></i>
+      </span>
+      </a>
+      
+  </div>
+</div>
+
+
+<footer class="jumbotron text-center text-white fixed-bottom" style="background-color: #030303">
+
+  <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0)">
+    <p>
+      Made By
+      <a style="color: #0ed9ddd6; text-decoration: none" href="#">Sushank and Chandana</a>
+    </p>
+  </div>
+</footer>
+{% endblock %}
+</body>
+
+</html>

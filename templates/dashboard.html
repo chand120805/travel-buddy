@@ -1,0 +1,150 @@
+{% extends "headers.html" %}
+{% block content %}
+<main>
+  <div class="container">
+    <h1>Weather Information</h1>
+    <h5><b>Location:</b> {{weather_data['resolvedAddress']}}</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Current Weather Conditions</th>
+          <th>Max Temperature (in °C)</th>
+          <th>Min Temperature (in °C)</th>
+          <th>Precipitation Probability</th>
+          <th>Humidity</th>
+          <th>Weather Alerts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for weather_data_item in weather_data['days'] %}
+        <tr>
+          <td>{{ weather_data_item['datetime'] }}</td>
+          <td>{{ weather_data_item['conditions'] }}</td>
+          <td>{{ weather_data_item['tempmax'] }}</td>
+          <td>{{ weather_data_item['tempmin'] }}</td>
+          <td>{{ weather_data_item['precipprob'] }}</td>
+          <td>{{ weather_data_item['humidity'] }}</td>
+          <td>{{ weather_data_item['description'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h1>Planned Itinerary</h1>
+    <code><h6>
+            **This is a tentative itinerary, so please be flexible, it may have
+            some mistakes.
+          </h6></code>
+    <div id="markdown-content">{{ plan }}</div>
+    <button id="download" class="btn btn-primary">Download Itinerary as PDF</button>
+  </div> 
+  <div class="md-4 pd container">
+    <h5>
+      For Hotels & Flight Booking:
+      <a style="text-decoration: none" href="https://www.booking.com" target="_blank">
+        <button type="button" class="btn btn-light">
+          Click Here
+        </button>
+      </a>
+    </h5>
+    <section id="globe-view" class="section-globe">
+      <h2>View Locations on 3D Globe</h2>
+      <button id="globe-btn">View 3D Globe</button>
+    </section>
+  </div>
+</main>
+<div class="floating-container">
+  <div class="floating-button">
+      <i class="fa-solid fa-share-from-square"></i>
+  </div>
+  <div class="element-container">
+      <a class="float-element" href="https://www.facebook.com/profile.php?id=61556915904075" target="_blank"> 
+          <span>
+          <i class="fa-brands fa-facebook"></i>
+      </a>
+      </span>
+      <a class="float-element" href="https://wa.me/9182972398" target="_blank">
+      <span>
+          <i class="fa-brands fa-whatsapp"></i>
+      </span>
+      </a>
+      <a class="float-element" href="https://x.com/SirangiSushank" target="_blank">
+      <span>
+          <i class="fa-brands fa-x-twitter"></i>
+      </span>
+      </a>
+      <a class="float-element" href="https://www.linkedin.com/in/sree-sai-chandana-kunta" target="_blank">
+      <span >
+          <i class="fa-brands fa-linkedin"></i>
+      </span>
+      </a>
+      <a class="float-element" href="http://t.me/Chad131095" target="_blank">
+      <span >
+          <i class="fa-brands fa-telegram"></i>
+      </span>
+      </a>      
+  </div>
+</div>
+<footer class="jumbotron text-center text-white fixed-bottom" style="background-color: #030303;">
+  <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0)"> 
+    <p>
+      Made By
+      <a style="color: #0ed9ddd6; text-decoration: none" href="#">Sushank and Chandana</a>
+    </p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+  integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  setTimeout(function () {
+    const alerts = document.querySelectorAll(".alert");
+    alerts.forEach(function (alert) {
+      alert.style.opacity = 0;
+    });
+    setTimeout(function () {
+      alerts.forEach(function (alert) {
+        alert.style.display = "none";
+      });
+    }, 1000); 
+  }, 5000);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@11.0.1/dist/markdown-it.min.js"></script>
+<script>
+  const md = window.markdownit();
+  const html = md.render(
+    document.getElementById("markdown-content").textContent
+  );
+  document.getElementById("markdown-content").innerHTML = html;
+  document.getElementById('download').addEventListener('click', function() {
+    var element = document.querySelector('main');
+    var opt = {
+      margin: [0.5,0.5,0.5,0.5],
+      filename: 'itinerary.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 3, useCORS: true },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+    };
+    setTimeout(() => {
+    html2pdf().set(opt).from(element).save();
+    }, 100);
+      html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
+      var totalPages = pdf.internal.getNumberOfPages();
+      for (var i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+        pdf.setFontSize(10);
+        pdf.text('Page ' + i + ' of ' + totalPages, pdf.internal.pageSize.getWidth() - 1, pdf.internal.pageSize.getHeight() - 0.5);
+      }
+      pdf.save('itinerary.pdf');
+    });  
+  });
+</script>
+<script>
+document.getElementById('globe-btn').addEventListener('click', function() {
+  window.open('https://earth.google.com/web/', '_blank');
+});</script>
+{% endblock %}
+</body>
+</html>

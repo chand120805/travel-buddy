@@ -1,0 +1,124 @@
+{% extends "headers.html" %}
+{% block content %}   
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center">Travel Itinerary Generator</h1>
+          </div>
+        </div>
+        <section class="section-home">
+          <div class="intro-text">
+              <h1>Welcome to Travel Buddy</h1>
+              <p>Plan your dream trip with ease</p>
+          </div>
+      </section>     
+      <form action="/" method="POST" class="form-inline">
+        <div class="form-group">
+          <label for="source">From:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="source"
+            id="source"
+            placeholder="Enter your boarding point"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="destination">To:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="destination"
+            id="destination"
+            placeholder="Enter your destination"
+            required
+          />
+        </div>
+        <span class="form-group">
+          <label for="date">Travel Date:</label>
+          <input type="date" class="form-control" name="date" id="date"required/>
+          <label for="return">Return Date:</label>
+          <input type="date" class="form-control" name="return" id="return" required/>
+        </span>        
+        <button style="margin-top: 5px; padding: 4px;" type="submit" class="btn btn-primary">Submit</button>        
+          <div  class="container d-flex justify-content-center align-items-center">
+            <div class="text-center">
+              <img id="loading"  style="display: none;" src="{{url_for('static',filename='loading.gif')}}" alt="Loading..." />
+            </div>
+          </div> 
+      </form>
+    </main>
+    <div class="floating-container">
+      <div class="floating-button">
+          <i class="fa-solid fa-share-from-square"></i>
+      </div>    
+      <div class="element-container">
+          <a class="float-element" href="https://www.facebook.com/profile.php?id=61556915904075" target="_blank"> 
+              <span>
+              <i class="fa-brands fa-facebook"></i>
+          </a>
+          </span>
+          <a class="float-element" href="https://wa.me/9182972398" target="_blank">
+          <span>
+              <i class="fa-brands fa-whatsapp"></i>
+          </span>
+          </a>
+          <a class="float-element" href="https://x.com/SirangiSushank" target="_blank">
+          <span>
+              <i class="fa-brands fa-x-twitter"></i>
+          </span>
+          </a>
+          <a class="float-element" href="https://www.linkedin.com/in/sree-sai-chandana-kunta" target="_blank">
+          <span >
+              <i class="fa-brands fa-linkedin"></i>
+          </span>
+          </a>
+          <a class="float-element" href="http://t.me/Chad131095" target="_blank">
+          <span >
+              <i class="fa-brands fa-telegram"></i>
+          </span>
+          </a>          
+      </div>
+  </div>
+    <footer
+      class="jumbotron text-center text-white fixed-bottom"
+      style="background-color: #030303"
+    >   
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(255, 255, 255, 0)"
+      >    
+        <p>
+          Made by
+          <a style="color: #0ed9ddd6; text-decoration: none" href="#"
+            >Sushank and Chandana</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      setTimeout(function () {
+        const alerts = document.querySelectorAll(".alert");
+        alerts.forEach(function (alert) {
+          alert.style.opacity = 0;
+        });       
+        setTimeout(function () {
+          alerts.forEach(function (alert) {
+            alert.style.display = "none";
+          });
+        }, 1000); 
+      }, 5000); 
+      document.querySelector('form').addEventListener('submit', function() {
+        document.getElementById('loading').style.display = 'block';
+      });
+  </script> 
+    {% endblock %}
+    </body>
+</html>

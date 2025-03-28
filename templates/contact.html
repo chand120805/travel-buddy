@@ -1,0 +1,120 @@
+{% extends "headers.html" %}
+{% block content %}
+
+<main>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="display-7">
+      If you have any questions or suggestions, please feel free to contact us. We are always looking for ways to
+      improve our service.
+    </p>
+    <div style="display: none;" class="alert alert-success" id="success-alert" role="alert">
+      Thank you for contacting us! We will get back to you soon.
+    </div>
+
+    <form id="form" action="https://formspree.io/f/xqazrvoj" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name :</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ user_name }}">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email :</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{ user_email }}">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" id="button" value="Submit" >
+    </form>
+  </div>
+</main>
+
+<div class="floating-container">
+  <div class="floating-button">
+      <i class="fa-solid fa-share-from-square"></i>
+  </div>
+
+  <div class="element-container">
+      <a class="float-element" href="https://www.facebook.com/profile.php?id=61556915904075" target="_blank"> 
+          <span>
+          <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      </span>
+      <a class="float-element" href="https://wa.me/9182972398" target="_blank">
+      <span>
+          <i class="fa-brands fa-whatsapp"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="https://x.com/SirangiSushank" target="_blank">
+      <span>
+          <i class="fa-brands fa-x-twitter"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="https://www.linkedin.com/in/sree-sai-chandana-kunta" target="_blank">
+      <span >
+          <i class="fa-brands fa-linkedin"></i>
+      </span>
+      </a>
+
+      <a class="float-element" href="http://t.me/Chad131095" target="_blank">
+      <span >
+          <i class="fa-brands fa-telegram"></i>
+      </span>
+      </a>
+      
+  </div>
+</div>
+
+
+<footer class="jumbotron text-center text-white fixed-bottom" style="background-color: #030303">
+  <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0)">
+    <p>
+      Made By
+      <a style="color: #0ed9ddd6; text-decoration: none" href="#">Sushank and Chandana</a>
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  emailjs.init('44EluKIAjsMFEeoo_') // emailjs public key
+</script>
+
+<script>
+
+const btn = document.getElementById('button');
+const alerter = document.getElementById('success-alert');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Submitting...';
+
+   const serviceID = 'service_6f8n4mi'; // service_id
+   const templateID = 'template_rchvbih'; // template id
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      alerter.style.display = 'block';
+      btn.value = 'Submitted';
+      
+    }, (err) => {
+      btn.value = 'Submit';
+      alert(JSON.stringify(err));
+    });
+});
+
+
+</script>
+
+{% endblock %}
+</body>
+
+</html>
