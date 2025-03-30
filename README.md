@@ -28,6 +28,7 @@ Make your travel dreams a reality. Start planning your next adventure with the T
 ## About
 
 The Travel Itinerary Generator is a software tool designed to help travelers easily craft customized travel plans. By taking into account users' preferences, budgets, and travel dates, this application provides detailed recommendations for activities, attractions, and accommodations. Whether you're a seasoned explorer or a first-time traveler, the Travel Itinerary Generator helps you save time while ensuring a fulfilling and well-organized trip..
+Demo: https://travel-buddy-169p.onrender.com/
 
 ## Limitations & Future Work
 - The Travel Itinerary Generator works only based on the user's source and destination and time of travel.
@@ -55,7 +56,9 @@ The Travel Itinerary Generator is a software tool designed to help travelers eas
 2. Install required packages:
 
    ```shell
-   pip install -r requirements.txt
+  python -m venv .venv
+  source .venv/bin/activate
+  pip install -r requirements.txt
    ```
 
 ## API Keys
@@ -74,7 +77,7 @@ and save it in the root directory of the project.
 
 Run the following command to start the application:
 ```shell
-python wsgi.py
+flask run
 ```
 
 
