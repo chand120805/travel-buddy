@@ -6,3 +6,6 @@ bcrypt
 google-generativeai
 flask_sitemapper
 gunicorn
+jinja2
+markupsafe
+werkzeug
