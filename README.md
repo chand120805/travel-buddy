@@ -1,7 +1,7 @@
 # [Travel Itinerary Generator]
 ***
 
-<img title="Travel-Itinerary-Generator" align='right' src="/static/logo.png" alt="Travel Itinerary Generator Logo" width="150"/>
+<img title="Travel-Itinerary-Generator: Travel buddy" align='right' src="/static/logo.png" alt="Travel Itinerary Generator Logo" width="150"/>
 
 Effortlessly design your perfect getaway with the Travel Itinerary Generator! This intuitive trip planner is your go-to assistant for creating smooth and well-organized travel experiences. Whether you're setting off on a road trip, exploring a new city, or traveling abroad, our tool streamlines every step of the planning process.
 
