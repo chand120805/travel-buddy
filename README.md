@@ -12,18 +12,6 @@ Make your travel dreams a reality. Start planning your next adventure with the T
 <i>Explore, discover, and make every trip unforgettable.*</i>
 </p>
 
-## Table of Contents
-
-- [Travel Itinerary Generator](#travel-itinerary-generator)
-  - [Table of Contents](#table-of-contents)
-  - [About](#about)
-  - [Limitations \& Future Work](#limitations--future-work)
-  - [Features](#features)
-  - [Requirements](#requirements)
-  - [Setup and Installation](#setup-and-installation)
-  - [API Keys](#api-keys)
-  - [Usage](#usage)
-
 
 ## About
 
