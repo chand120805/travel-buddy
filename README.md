@@ -1,5 +1,5 @@
 # [Travel Buddy]
-***
+
 
 <img title="Travel-Itinerary-Generator: Travel buddy" align='right' src="/static/logo.png" alt="Travel Itinerary Generator Logo" width="150"/>
 
