@@ -5,7 +5,8 @@ from flask_sitemapper import Sitemapper
 import bcrypt
 import requests
 import datetime
-import bard,os
+import os
+import itinerary_generator
 from dotenv import load_dotenv
 
 
@@ -81,7 +82,7 @@ def index():
         
         
         try:
-            plan = bard.generate_itinerary(source, destination, start_date, end_date, no_of_day)
+            plan = import itinerary_generator.generate_itinerary(source, destination, start_date, end_date, no_of_day)
         except Exception as e:
             flash("Error in generating the plan. Please try again later.", "danger")
             return redirect(url_for("index"))
