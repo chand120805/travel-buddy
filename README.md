@@ -15,7 +15,7 @@ Make your travel dreams a reality. Start planning your next adventure with the T
 
 ## About
 
-The Travel Itinerary Generator is a software tool designed to help travelers easily craft customized travel plans. By taking into account users' preferences, budgets, and travel dates, this application provides detailed recommendations for activities, attractions, and accommodations. Whether you're a seasoned explorer or a first-time traveler, the Travel Itinerary Generator helps you save time while ensuring a fulfilling and well-organized trip..
+The Travel Itinerary Generator is a software tool designed to help travelers easily craft customized travel plans. By taking into account start location, destination, and travel dates, this application provides detailed recommendations for activities, attractions, and accommodations. Whether you're a seasoned explorer or a first-time traveler, the Travel Itinerary Generator helps you save time while ensuring a fulfilling and well-organized trip..
 Demo: https://travel-buddy-169p.onrender.com/
 
 ## Limitations & Future Work
